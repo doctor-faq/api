@@ -40,7 +40,7 @@ export class User extends EntityBase {
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @IsOptional()

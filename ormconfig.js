@@ -3,7 +3,7 @@ module.exports = {
   host: 'localhost',
   port: '5432',
   username: 'postgres',
-  password: '',
+  password: '54321',
   database: 'askmed',
   synchronize: true,
   logging: true,

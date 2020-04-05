@@ -7,6 +7,10 @@ export abstract class CrudService<T> {
     return this.repository.save(data);
   }
 
+  update(data: DeepPartial<T>) {
+    return this.repository.save(data);
+  }
+
   deleteById(id: string) {
     return this.repository.delete(id);
   }

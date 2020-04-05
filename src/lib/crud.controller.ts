@@ -7,7 +7,7 @@ import {
 import { Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
 import { CrudService } from './crud.service';
 import { EntityBase } from './base.entity';
-import { DeepPartial } from 'typeorm';
+import { DeepPartial, UpdateResult } from 'typeorm';
 
 export interface ICrudController<TS, T extends EntityBase> {
   service: TS;
@@ -80,7 +80,7 @@ export function BaseCrudController<
     })
     @Patch(':id')
     update(@Param('id') id: string, @Body() data: DeepPartial<T>) {
-      return this.service.save({
+      return this.service.update({
         ...data,
         id,
       });
